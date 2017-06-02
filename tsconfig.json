@@ -12,12 +12,12 @@
       "noImplicitAny": false,
       "outDir": "lib"
    },
+   "include": [
+      "src/**/*"
+   ],
    "typeRoots": [
       "/node_modules/@types/",
       "/typings/"
-   ],
-   "files": [
-      "src/ng2-typeahead.ts"
    ],
    "exclude": [
       "node_modules"

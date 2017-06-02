@@ -1,1 +1,1 @@
-module.exports = require('./lib/ng2-typeahead');
+module.exports = require('./lib/');

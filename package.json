@@ -6,11 +6,20 @@
   "scripts": {
     "postinstall": "typings install",
     "typings": "typings",
-    "tsc": "tsc",
-    "tsc:w": "tsc -w",
-    "localdev": "tsc && npm run localdev:rm && npm run localdev:cp",
-    "localdev:rm": "rm -rf ../dev-site/node_modules/ng2-typeahead/src && rm -rf ../dev-site/node_modules/ng2-typeahead/lib",
-    "localdev:cp": "cp -r src ../dev-site/node_modules/ng2-typeahead/ && cp -r lib ../dev-site/node_modules/ng2-typeahead/"
+    "build": "tsc",
+    "build:watch": "tsc -w",
+    "demo": "npm-run-all build demo:rm demo:copy demo:serve",
+    "demo:serve": "cd demo/ && ng serve",
+    "demo:copy": "npm-run-all demo:copy:lib demo:copy:src demo:copy:index.ts demo:copy:index.js",
+    "demo:copy:index.ts": "cp -r index.ts demo/node_modules/ng2-typeahead",
+    "demo:copy:index.js": "cp -r index.js demo/node_modules/ng2-typeahead",
+    "demo:copy:lib": "cp -r src demo/node_modules/ng2-typeahead",
+    "demo:copy:src": "cp -r lib demo/node_modules/ng2-typeahead",
+    "demo:rm": "npm-run-all demo:rm:lib demo:rm:src demo:rm:index.ts demo:rm:index.js",
+    "demo:rm:index.ts": "rm -rf demo/node_modules/ng2-typeahead/index.ts",
+    "demo:rm:index.js": "rm -rf demo/node_modules/ng2-typeahead/index.js",
+    "demo:rm:lib": "rm -rf demo/node_modules/ng2-typeahead/lib",
+    "demo:rm:src": "rm -rf demo/node_modules/ng2-typeahead/src"
   },
   "keywords": [
     "angular",
@@ -34,20 +43,29 @@
   "typescript": {
     "definition": "index.d.ts"
   },
-  "dependencies": {},
+  "dependencies": {
+    "angular-lib-exp": "git+https://github.com/msusur/angular-lib-exp.git",
+    "npm-run-all": "^4.0.2"
+  },
   "devDependencies": {
+    "@angular/animations": "^4.1.3",
     "@angular/cli": "^1.1.0",
     "@angular/common": "^4.1.3",
+    "@angular/compiler": "^4.1.3",
     "@angular/core": "^4.1.3",
     "@angular/forms": "^4.1.3",
+    "@angular/http": "^4.1.3",
+    "@angular/platform-browser": "^4.1.3",
+    "@angular/platform-browser-dynamic": "^4.1.3",
+    "@angular/router": "^4.1.3",
+    "concurrently": "^2.2.0",
     "core-js": "^2.4.1",
+    "lite-server": "^2.2.2",
     "reflect-metadata": "^0.1.3",
     "rxjs": "^5.0.0-beta.12",
     "systemjs": "0.19.27",
-    "zone.js": "^0.6.26",
-    "concurrently": "^2.2.0",
-    "lite-server": "^2.2.2",
     "typescript": "^2.3.4",
-    "typings": "^1.3.2"
+    "typings": "^1.3.2",
+    "zone.js": "^0.6.26"
   }
 }

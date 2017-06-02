@@ -1,1 +1,1 @@
-export * from './src/ng2-typeahead';
+export * from './src/';

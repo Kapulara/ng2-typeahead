@@ -10,7 +10,6 @@ export const TYPEAHEAD_CONTROL_VALUE_ACCESSOR:any = {
   multi: true
 };
 
-
 @Component({
   selector: 'typeahead',
   template: `
@@ -18,7 +17,7 @@ export const TYPEAHEAD_CONTROL_VALUE_ACCESSOR:any = {
 
       <input #inputElement
         [placeholder]="placeholder"
-        [(ngModel)]="input"
+        (ngModel)="input"
         type="text"
         [ngClass]="{'typeahead-input': true, 'typeahead-input-has-selection': hasSelection()}"
         typeahead="off"
@@ -31,7 +30,7 @@ export const TYPEAHEAD_CONTROL_VALUE_ACCESSOR:any = {
 
       <input type="text"
         class="typeahead-typeahead"
-        [(ngModel)]="typeahead"
+        (ngModel)="typeahead"
         typeahead="off"
         spellcheck="false"
         disabled="true">
