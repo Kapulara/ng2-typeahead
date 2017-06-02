@@ -5,13 +5,13 @@ A simple Angular2 typeahead/autocomplete component.
 
 **This package is no longer being developed.**
 
-[See ng2-typeahead on GitHub](https://github.com/brinkmanjg/ng2-typeahead)
+[See ng2-typeahead on GitHub](https://github.com/Kapulara/ng2-typeahead)
 
 [![Angular 2 Style Guide](https://mgechev.github.io/angular2-style-guide/images/badge.svg)](https://github.com/mgechev/angular2-style-guide)
 [![Join the chat at https://gitter.im/brinkmanjg/ng2-bootstrap](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/brinkmanjg/ng2-bootstrap?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Dependency Status](https://david-dm.org/brinkmanjg/ng2-typeahead.svg)](https://david-dm.org/brinkmanjg/ng2-typeahead)
-[![devDependency Status](https://david-dm.org/brinkmanjg/ng2-typeahead/dev-status.svg)](https://david-dm.org/brinkmanjg/ng2-typeahead#info=devDependencies)
-[![Throughput Graph](https://graphs.waffle.io/brinkmanjg/ng2-typeahead/throughput.svg)](https://waffle.io/brinkmanjg/ng2-typeahead/metrics)
+[![Dependency Status](https://david-dm.org/Kapulara/ng2-typeahead.svg)](https://david-dm.org/Kapulara/ng2-typeahead)
+[![devDependency Status](https://david-dm.org/Kapulara/ng2-typeahead/dev-status.svg)](https://david-dm.org/Kapulara/ng2-typeahead#info=devDependencies)
+[![Throughput Graph](https://graphs.waffle.io/Kapulara/ng2-typeahead/throughput.svg)](https://waffle.io/Kapulara/ng2-typeahead/metrics)
 
 ## Installation
 
@@ -19,7 +19,7 @@ A simple Angular2 typeahead/autocomplete component.
 
   `npm i ng2-typeahead --save`
 
-  Alternatively, you can [download it in a ZIP file](https://github.com/brinkmanjg/ng2-typeahead/archive/master.zip).
+  Alternatively, you can [download it in a ZIP file](https://github.com/Kapulara/ng2-typeahead/archive/master.zip).
 
 2. Currently `ng2-typeahead` contains one directive: `typeahead`.
 
@@ -91,7 +91,7 @@ export class MyComponent {
 ```
 
 The following adjustments may be required in systemjs.config.js to run the example code.
-[Issue #7](https://github.com/brinkmanjg/ng2-typeahead/issues/7)
+[Issue #7](https://github.com/Kapulara/ng2-typeahead/issues/7)
 
 ```
 var map = {
@@ -153,7 +153,7 @@ Selector | Remarks
 
 Please follow this guidelines when reporting bugs and feature requests:
 
-1. Use [GitHub Issues](https://github.com/brinkmanjg/ng2-typeahead/issues) board to report bugs and feature requests (not our email address)
+1. Use [GitHub Issues](https://github.com/Kapulara/ng2-typeahead/issues) board to report bugs and feature requests (not our email address)
 2. Please **always** write steps to reproduce the error. That way we can focus on fixing the bug, not scratching our heads trying to reproduce it.
 
 Thanks for understanding, and apologies for any issues experienced thus far.
@@ -162,4 +162,4 @@ Thanks for understanding, and apologies for any issues experienced thus far.
 
 ### License
 
-The MIT License (see the [LICENSE](https://github.com/brinkmanjg/ng2-typeahead/blob/master/LICENSE) file for the full text)
+The MIT License (see the [LICENSE](https://github.com/Kapulara/ng2-typeahead/blob/master/LICENSE) file for the full text)
