@@ -8,9 +8,9 @@
     "typings": "typings",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "demo.serve": "run-s tsc demo.build lite",
-    "demo.build": "ng build -prod --aot",
-    "localdev": "tsc && cp -r lib/ ../dev-site/node_modules/ng2-typeahead/ && cp -r src/ ../dev-site/node_modules/ng2-typeahead/"
+    "localdev": "tsc && npm run localdev:rm && npm run localdev:cp",
+    "localdev:rm": "rm -rf ../dev-site/node_modules/ng2-typeahead/src && rm -rf ../dev-site/node_modules/ng2-typeahead/lib",
+    "localdev:cp": "cp -r src ../dev-site/node_modules/ng2-typeahead/ && cp -r lib ../dev-site/node_modules/ng2-typeahead/"
   },
   "keywords": [
     "angular",

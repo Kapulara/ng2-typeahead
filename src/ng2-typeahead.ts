@@ -148,6 +148,11 @@ export class Typeahead implements OnInit, ControlValueAccessor {
   @Input() maxSuggestions:number = -1;
 
   /**
+   * Even when there is no input we wan't to show the suggestions.
+   */
+  @Input() showSuggestionsEmptyInput:boolean = false;
+
+  /**
    * Event that occurs when a suggestion is selected.
    */
   @Output() suggestionSelected = new EventEmitter<any>();
@@ -476,21 +481,25 @@ export class Typeahead implements OnInit, ControlValueAccessor {
       return;
     }
 
-    // Handle empty input
-    if (input == null || input.length === 0) {
-      // No input yet
-      this.suggestions = [];
-      this.areSuggestionsVisible = false;
-      return;
-    }
-
     // Check that we have data
     if (this.list == null || this.list.length === 0) return;
 
-    // Filter the suggestions
-    this.suggestions = this.list.filter(function (item) {
-      return item[searchProperty].toLowerCase().indexOf(input.toLowerCase()) > -1;
-    });
+    // Handle empty input
+    if (input == null || input.length === 0) {
+      if(this.showSuggestionsEmptyInput === false) {
+        this.suggestions = [];
+        this.areSuggestionsVisible = false;
+        return;
+      } else {
+        this.suggestions = this.list;
+      }
+    } else {
+
+      // Filter the suggestions
+      this.suggestions = this.list.filter(function (item) {
+        return item[searchProperty].toLowerCase().indexOf(input.toLowerCase()) > -1;
+      });
+    }
 
     // Limit the suggestions (if applicable)
     if (this.maxSuggestions > -1) {
@@ -516,7 +525,9 @@ export class Typeahead implements OnInit, ControlValueAccessor {
    */
   public populateTypeahead() {
     // Clear the typeahead when there is no active suggestion
-    if (this.activeSuggestion == null || !this.areSuggestionsVisible) {
+    if (this.activeSuggestion == null ||
+        !this.areSuggestionsVisible ||
+        this.input == null) {
       this.typeahead = '';
       return;
     }
