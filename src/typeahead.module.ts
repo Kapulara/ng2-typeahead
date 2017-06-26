@@ -4,7 +4,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from "@angular/router";
 import { FormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
-import { Typeahead } from './ng2-typeahead'
+
+import { Typeahead } from './typeahead.component'
 
 @NgModule({
     imports: [

@@ -17,7 +17,7 @@ export const TYPEAHEAD_CONTROL_VALUE_ACCESSOR:any = {
 
       <input #inputElement
         [placeholder]="placeholder"
-        (ngModel)="input"
+        [(ngModel)]="input"
         type="text"
         [ngClass]="{'typeahead-input': true, 'typeahead-input-has-selection': hasSelection()}"
         typeahead="off"
@@ -30,7 +30,7 @@ export const TYPEAHEAD_CONTROL_VALUE_ACCESSOR:any = {
 
       <input type="text"
         class="typeahead-typeahead"
-        (ngModel)="typeahead"
+        [(ngModel)]="typeahead"
         typeahead="off"
         spellcheck="false"
         disabled="true">
@@ -127,11 +127,6 @@ export class Typeahead implements OnInit, ControlValueAccessor {
   @Input() list:any[] = [];
 
   /**
-   * Input element placeholder text.
-   */
-  @Input() placeholder:string = '';
-
-  /**
    * The property of a list item that should be used for matching.
    */
   @Input() searchProperty:string = 'name';
@@ -145,6 +140,12 @@ export class Typeahead implements OnInit, ControlValueAccessor {
    * The maximum number of suggestions to display.
    */
   @Input() maxSuggestions:number = -1;
+
+  /**
+   * The placeholder for the input
+   * @type {string}
+   */
+  @Input() placeholder:string = '';
 
   /**
    * Even when there is no input we wan't to show the suggestions.
@@ -393,6 +394,7 @@ export class Typeahead implements OnInit, ControlValueAccessor {
     if (this.input == null || this.input.length === 0) {
       console.debug(`When the input is cleared`);
       this.typeahead = '';
+
       this.populateSuggestions();
       return;
     }
@@ -479,6 +481,8 @@ export class Typeahead implements OnInit, ControlValueAccessor {
       console.error('The input attribute `searchProperty` must be provided');
       return;
     }
+
+
 
     // Check that we have data
     if (this.list == null || this.list.length === 0) return;
