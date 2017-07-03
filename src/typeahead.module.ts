@@ -17,6 +17,9 @@ import { Typeahead } from './typeahead.component'
     declarations: [
         Typeahead
     ],
+    exports: [
+        Typeahead
+    ],
     providers: [],
     bootstrap: []
 })
